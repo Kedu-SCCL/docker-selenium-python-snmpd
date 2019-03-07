@@ -74,7 +74,7 @@ Things to consider:
 
 3. Start up a selenium standalone server (chrome or firefox).
 
-You can skip this step if you use the provided "docker-compose.yml" example.
+You can skip this step if you are planning to test it with [docker compose example](https://github.com/Kedu-SCCL/docker-selenium-python-snmpd/blob/master/docker-compose.yml).
 
 Example:
 
@@ -86,7 +86,7 @@ docker run  --name selenium \
 
 4. Start up the selenium-snmpd container mounting as volumes the selenium test (step 1) and the custon SNMP configuration file (step 2).
 
-You can skip this step if you use the provided "docker-compose.yml" example.
+You can skip this step if you are planning to test it with [docker compose example](https://github.com/Kedu-SCCL/docker-selenium-python-snmpd/blob/master/docker-compose.yml).
 
 Example:
 
@@ -100,7 +100,7 @@ docker run --name snmpd \
 
 5. Test it asking for the right OID.
 
-We provided a "test" container in our "docker-compose.yml" example:
+We provided a "test" container in our [docker compose example](https://github.com/Kedu-SCCL/docker-selenium-python-snmpd/blob/master/docker-compose.yml):
 
 ```
 cd && git clone https://github.com/Kedu-SCCL/selenium-python-snmpd
@@ -121,13 +121,13 @@ Expected output similar to:
 iso.3.6.1.4.1.8072.1.3.2.3.1.1.23.101.120.97.109.112.108.101.95.99.104.114.111.109.101.95.115.101.108.101.110.105.117.109 = STRING: "https://www.fsf.org/"
 ```
 
-6. (Optional) In case that you used provided docker compose stop it:
+6. (Optional) In case that you used provided [docker compose example](https://github.com/Kedu-SCCL/docker-selenium-python-snmpd/blob/master/docker-compose.yml) stop it:
 
 ```
 CTRL + ESC
 ```
 
-And remove all the images and networks:
+And remove all the containers and networks:
 
 ```
 docker-compose down
