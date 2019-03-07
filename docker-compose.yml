@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+
+  selenium:
+    container_name: selenium
+    environment:
+    - START_XVFB=false
+    image: selenium/standalone-chrome
+
+  snmpd:
+    container_name: snmpd
+    depends_on:
+    - selenium
+    volumes:
+    - ./files/example-chrome-selenium.py:/example-chrome-selenium.py
+    - ./files/example-chrome-snmpd.conf:/etc/snmp/snmpd.conf
+    image: kedu/selenium-snmpd:0.1
+
+  test:
+    container_name: test
+    depends_on:
+    - selenium
+    - snmpd
+    image: kedu/selenium-snmpd:0.1
