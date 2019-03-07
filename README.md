@@ -11,7 +11,7 @@ SNMP ready container to run python selenium tests.
 
 The purpose is to setup a web monitor that can be integrated with monitoring tools such as Nagios or Zabbix.
 
-An example could be set up a selenium test that automates (headless) a login, a click into a certian part of the website, and a logout, measures the consumed time and returns as a float in seconds.
+An example could be set up a selenium test that automates (headless) a login, a click into a certain part of the website, and a logout, measures the consumed time and returns as a float in seconds.
 
 Your monitoring system (Nagios, Zabbix, etc.) could be configured to graph this monitor and determine spikes in the load time, or even timeouts.
 
@@ -34,7 +34,7 @@ print driver.current_url
 
 Things to consider:
 
-* In this example "selenium" is the host wich will run the selenium standalone (see step 3)
+* In this example "selenium" is the host which will run the selenium standalone (see step 3)
 * In this example we will need a selenium chrome standalone server
 
 2. Customize the SNMP daemon configuration file to extend it and allow execution of the selenium python test.
@@ -84,7 +84,7 @@ docker run  --name selenium \
   -d selenium/standalone-chrome
 ```
 
-4. Start up the selenium-snmpd container mounting as volumes the selenium test (step 1) and the custon SNMP configuration file (step 2).
+4. Start up the selenium-snmpd container mounting as volumes the selenium test (step 1) and the custom SNMP configuration file (step 2).
 
 You can skip this step if you are planning to test it with [docker compose example](https://github.com/Kedu-SCCL/docker-selenium-python-snmpd/blob/master/docker-compose.yml).
 
@@ -242,7 +242,7 @@ We experienced issues when running as a default user "Debian-snmp", because didn
 
 You should need to connect to the container, perform an "apt-get update" and install "procps" package.
 
-3. Checj SNMP is exposed to accept external connections
+3. Check if SNMP is exposed to accept external connections
 
 The main setting to check in the snmpd.conf file is:
 
@@ -289,18 +289,3 @@ For script located in:
 ```
 extend example_chrome_selenium /usr/bin/python /example-chrome-selenium.py
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
